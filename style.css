@@ -1,0 +1,241 @@
+/* ArcherHub 2.0 */
+:root {
+    --page-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --primary-green: #087f35;
+    --text-dark: #25292c;
+    --text-muted: #657078;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--page-bg);
+    color: var(--text-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboard-page {
+    min-height: 100vh;
+    padding: 38px clamp(16px, 4vw, 56px) 56px;
+}
+
+.dashboard-header { margin: 0 auto 44px; }
+.dashboard-header h1 {
+    margin: 0;
+    font-size: clamp(2.1rem, 4vw, 3.35rem);
+    line-height: 1.08;
+    font-weight: 760;
+    letter-spacing: -1.1px;
+}
+.dashboard-header p {
+    margin: 12px 0 0;
+    color: var(--text-dark);
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    font-weight: 500;
+}
+
+.dashboard-container {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+.dashboard-container > .row { align-items: stretch; }
+.dashboard-container > .row > div { display: flex; }
+
+.dashboard-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 435px;
+    padding: 25px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border-radius: 19px;
+    box-shadow: 0 9px 26px rgba(34, 48, 40, 0.085);
+}
+
+.card-heading h2 {
+    margin: 0;
+    color: var(--primary-green);
+    font-size: clamp(1.1rem, 1.35vw, 1.55rem);
+    line-height: 1.18;
+    font-weight: 750;
+    letter-spacing: -0.25px;
+}
+.card-heading p {
+    min-height: 38px;
+    margin: 8px 0 11px;
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    line-height: 1.35;
+    text-align: center;
+}
+.card-footer-label, .single-legend {
+    min-height: 24px;
+    margin-top: 12px;
+    color: #5b6064;
+    font-size: 0.82rem;
+    text-align: center;
+}
+.card-footer-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 7px;
+}
+
+.chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    flex: 1 1 auto;
+    min-height: 220px;
+}
+.chart-wrap-boxplot {
+    height: 178px;
+    min-height: 160px;
+    flex: 0 0 178px;
+}
+.chart-wrap-stacked {
+    height: 230px;
+    min-height: 205px;
+    flex: 0 0 230px;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+.legend-dot {
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    flex: 0 0 auto;
+    border-radius: 1px;
+}
+.single-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.legend-box {
+    width: 36px;
+    height: 14px;
+    display: inline-block;
+    border: 2px solid var(--primary-green);
+    background: rgba(8, 127, 53, 0.15);
+}
+
+.stat-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 6px;
+}
+.stat-chip {
+    min-width: 0;
+    padding: 8px 4px 7px;
+    border-radius: 9px;
+    text-align: center;
+    background: #f3f7f4;
+}
+.stat-chip span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    line-height: 1.25;
+}
+.stat-chip strong {
+    display: block;
+    margin-top: 3px;
+    color: var(--primary-green);
+    font-size: 0.98rem;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+}
+
+.context-switch {
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    max-width: 100%;
+    padding: 4px;
+    margin: 0 auto 6px;
+    border: 1px solid #d9e2dc;
+    border-radius: 12px;
+    background: #f1f5f2;
+}
+.context-option {
+    min-width: 80px;
+    padding: 5px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #58645d;
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.context-option.active {
+    background: var(--primary-green);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(8, 127, 53, .18);
+}
+.context-option:focus-visible {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 2px;
+}
+.current-mode {
+    min-height: 19px;
+    margin: 3px 0 1px;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    text-align: center;
+}
+
+@media (min-width: 1500px) {
+    .dashboard-card { padding: 27px 25px 22px; }
+    .chart-wrap { height: 275px; }
+    .chart-wrap-boxplot { height: 190px; flex-basis: 190px; }
+    .chart-wrap-stacked { height: 245px; flex-basis: 245px; }
+}
+
+@media (max-width: 1200px) {
+    .dashboard-page { padding-right: 22px; padding-left: 22px; }
+    .dashboard-header { margin-bottom: 34px; }
+    .dashboard-card { min-height: 430px; padding: 23px 18px 19px; }
+    .card-heading p { font-size: 0.87rem; }
+    .chart-wrap { height: 240px; min-height: 210px; }
+    .chart-wrap-boxplot { height: 170px; min-height: 155px; flex-basis: 170px; }
+    .chart-wrap-stacked { height: 225px; min-height: 200px; flex-basis: 225px; }
+}
+
+@media (max-width: 600px) {
+    .dashboard-page { padding: 24px 13px 30px; }
+    .dashboard-header { margin-bottom: 24px; }
+    .dashboard-header h1 { font-size: clamp(2rem, 9vw, 2.55rem); letter-spacing: -0.7px; }
+    .dashboard-header p { margin-top: 9px; font-size: 1rem; line-height: 1.35; }
+    .dashboard-container > .row { --bs-gutter-y: 1rem; }
+    .card-heading p { margin: 7px 0 10px; font-size: 0.9rem; }
+    .chart-wrap { height: 260px; min-height: 245px; flex: 0 0 260px; }
+    .chart-wrap-boxplot { height: 190px; min-height: 175px; flex-basis: 190px; }
+    .chart-wrap-stacked { height: 250px; min-height: 230px; flex-basis: 250px; }
+    .stat-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+    .stat-chip { padding: 8px 6px; }
+    .stat-chip span { font-size: 0.72rem; }
+    .stat-chip strong { font-size: 1rem; }
+    .card-footer-label { column-gap: 10px; font-size: 0.79rem; }
+    .context-option { min-height: 40px; padding: 8px 14px; }
+    .current-mode { font-size: 0.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .context-option { transition: none; }
+}

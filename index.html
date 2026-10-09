@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ArchersHub 2.0</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <main class="dashboard-page">
+            <header class="dashboard-header text-center">
+                <h1>ArchersHub 2.0</h1>
+                <p>by Jongjun Lee of SS1 Group 2</p>
+            </header>
+
+            <section class="container-fluid dashboard-container">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-xl-4 order-1">
+                        <article class="dashboard-card">
+                            <div class="card-heading">
+                                <h2>Course Grade Distribution</h2>
+                                <p>CCADVDB · AY2026~2027 Term 3 · Student GPA range</p>
+                            </div>
+                            <div class="chart-wrap chart-wrap-boxplot">
+                                <canvas id="gradeDistributionChart"></canvas>
+                            </div>
+                            <div class="stat-summary">
+                                <div class="stat-chip"><span>Minimum</span><strong id="gradeMin">—</strong></div>
+                                <div class="stat-chip"><span>Median</span><strong id="gradeMedian">—</strong></div>
+                                <div class="stat-chip"><span>Mean</span><strong id="gradeMean">—</strong></div>
+                                <div class="stat-chip"><span>Maximum</span><strong id="gradeMax">—</strong></div>
+                            </div>
+                            <div class="single-legend">
+                                <span class="legend-box"></span> GPA (0–4)
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4 order-2">
+                        <article class="dashboard-card">
+                            <div class="card-heading">
+                                <h2>Professor Grade Trends</h2>
+                                <p>Average GPA by professor across AY2026~2027 terms</p>
+                            </div>
+                            <div class="chart-wrap">
+                                <canvas id="professorStreamChart"></canvas>
+                            </div>
+                            <div class="card-footer-label professor-legend" id="professorLegend">
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4 order-3">
+                        <article class="dashboard-card">
+                            <div class="card-heading">
+                                <h2>Student Proportion</h2>
+                                <p>CCADVDB Student Ratio</p>
+                            </div>
+                            <div class="context-switch">
+                                <button class="context-option" id="courseButton">Course</button>
+                                <button class="context-option active" id="idButton">ID</button>
+                            </div>
+                            <div class="current-mode" id="stackedModeDescription">
+                                Each ID bar is segmented by Course.
+                            </div>
+                            <div class="chart-wrap chart-wrap-stacked">
+                                <canvas id="courseShareChart"></canvas>
+                            </div>
+                            <div class="card-footer-label stacked-legend" id="stackedLegend">
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@sgratzl/chartjs-chart-boxplot@4.4.5/build/index.umd.min.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>

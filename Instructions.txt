@@ -1,0 +1,10 @@
+The objective of this activity is to be able to use a CSS framework - Bootstrap to an external site. and a JavaScript library - Chart.js to an external site. to create a mobile responsive mini dashboard featuring 3 different kinds of graphs. This will help the team experiment and decide on what type of graphs and what data will be considered for their Machine Project’s dashboard. Note that this is still an individual activity with individual submission so there should be no similar output even from members of the same team.
+
+ Bootstrap Link = https://getbootstrap.com/
+ Chart.js Links = https://www.chartjs.org/
+
+1. Think of 3 charts that will be useful for your Machine Project web application. Ensure that no one from your team has the same idea - the same type of chart for the same data that you like to display.
+2. Create the base HTML file to display these charts through canvas elements. Design the HTML using additional CSS rules if needed in a separate file.
+3. Use Bootstrap to use the grid system on these canvas elements that will make the web page responsive such that in laptop screens, the three charts are side-by-side while in mobile screens they would be displayed one after the other.
+- Laptop view
+- Mobile view
